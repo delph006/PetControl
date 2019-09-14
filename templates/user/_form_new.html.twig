@@ -1,0 +1,9 @@
+{% include 'base.html.twig' %}
+
+<h1>Veuillez créer votre compte</h1>
+
+    {{ form_start(form)}}
+        {{ form_widget(form) }}
+        <button class="btn btn-info">{{ button_label|default('Valider') }}</button>
+    {{ form_end(form) }}
+

@@ -1,20 +1,38 @@
 <nav class="navbar navbar-dark bg-dark">
 
     <div class="logo">
-        <i class="fas fa-paw logo"></i><a class="namesite" href="#">PetControl</a>
+        <i class="fas fa-paw logo"></i><a class="namesite" href="{{ path('home') }}">PetControl</a>
+    </div>
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}{# est ce que mon utilisateur est authentifié ? #}
+    
+    <div class="form-inline">
+        <a href="">Mes animaux</a>
+        <a href="">Enregistrer un animal</a>
+        <a href="">Leur santé</a>
     </div>
 
     <div class="form-inline">
-        <button href ="" class="ui animated button" tabindex="0">
-                    <div class="visible content">S'inscrire</div>
-                    <div class="hidden content">
-                        <i class="fas fa-paw"></i>
-                </button>
-
-                <button href ="" class="ui animated button" tabindex="0">
-                    <div class="visible content">Se connecter</div>
-                    <div class="hidden content">
-                        <i class="fas fa-cat"></i>
-                </button>
+        <a class="btn btn-outline-primary my-2 my-sm-0"  href="{{ path('user_index', { id : app.user.id }) }}">Mon compte {{ app.user.username }}</a>
+        <a class="btn btn-danger my-2 my-sm-0"  href="{{ path('app_logout')}} ">Déconnexion</a>
     </div>
+        
+    {% else %} {# si non , alors je lui propose de se connecter#}
+
+    <div class="form-inline">
+        <a href ="{{ path('app_register') }}">
+            <button class="ui animated button" tabindex="0">
+                <div class="visible content">S'inscrire</div>
+                <div class="hidden content"><i class="fas fa-paw"></i></div>
+            </button>
+        </a>
+
+        <a href ="{{ path('app_login') }}">
+            <button  class="ui animated button" tabindex="0">
+                <div class="visible content">Se connecter</div>
+                    <div class="hidden content"><i class="fas fa-cat"></i></div>
+            </button>
+        </a>
+    </div>
+    {% endif %}
 </nav>
