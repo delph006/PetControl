@@ -1,0 +1,16 @@
+/** navbar **/
+
+.navbar {
+    padding: 1.5em;
+}
+
+.namesite {
+    font-family: 'Chilanka';
+    font-size: 3em;
+}
+
+.fa-paw.logo {
+    font-size: 5em;
+    color: white;
+    margin-right: 0.1em;
+}
