@@ -15,15 +15,7 @@
 
     {% include "navigation/_nav_bar.html.twig" %}
     <div class="wrapper">
-        <div>
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            {% include "navigation/_nav_bar_vertical.html.twig" %}
-            {% else %}
-                <img src="{{ asset('../images/kitten.jpg') }}">
-            {% endif %}
-        </div>
-
-        <div class="main">
+        <div class="main form">
             {# Messages d'alerte #}
                 {% for label, messages in app.flashes %}
                     {% for message in messages %}

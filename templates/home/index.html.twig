@@ -1,8 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Accueil PetControl{% endblock %}
 
 {% block body %}
 
-<h1>Home commune sans connexion</h1>
+<h1>PetControl vous facilite la vie !!!</h1>
+
+<ul class="list-unstyled">
+  <li class="media">
+    <img src="{{ asset('../images/flat.png')}}" class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Regrouper toutes les informations concernant vos animaux à un seul endroit</h5>
+     <span class="petcontrol">PetControl</span> permet d'enregistrer toutes les informations concernant vos animaux.<br>
+     Tel que leur date de naissance, leur numéro de puce, leur poids ...
+    </div>
+  </li>
+  <li class="media my-4">
+    <img src="{{ asset('../images/heart.png')}}" class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Suivre leur état de santé</h5>
+      <span class="petcontrol">PetControl</span> permet de suivre l'état de santé de votre animal.<br>
+      Vous pouvez enregistrer toutes les visites chez le vétérinaire et de ne plus rater les prochains rdv.
+    </div>
+  </li>
+  <li class="media">
+    <img src="{{ asset('../images/euro.png')}}" class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Suivre les frais vétérinaires</h5>
+      <span class="petcontrol">PetControl</span> permet de suivre les frais engagés chez le vétérinaire et suivre les remboursement de son assurance.
+    </div>
+  </li>
+</ul>
+
+
 {% endblock %}

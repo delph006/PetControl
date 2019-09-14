@@ -1,9 +1,19 @@
-{% include 'base.html.twig' %}
+{% extends 'form/base_form.html.twig' %}
 
-<h1>Veuillez créer votre compte</h1>
+{% block title %}Créer un compte{% endblock %}
 
-    {{ form_start(form)}}
-        {{ form_widget(form) }}
-        <button class="btn btn-info">{{ button_label|default('Valider') }}</button>
-    {{ form_end(form) }}
+    {% block body %}
+
+    <img class="doglogin" src="{{ asset('images/dog-register.jpg') }}">
+    <div class="form login register">
+
+        <h1>Créer votre compte</h1>
+
+        {{ form_start(form)}}
+            {{ form_widget(form) }}
+            <button class="btn btn-info register">{{ button_label|default('Valider') }}</button>
+        {{ form_end(form) }}
+    </div>
+
+    {% endblock %}
 

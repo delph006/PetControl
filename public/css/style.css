@@ -1,17 +1,189 @@
+/** generality **/
+
+.petcontrol {
+    font-family: 'Chilanka';
+}
+
 /** navbar **/
 
 .navbar {
-    padding: 1.5em;
+    padding: 2rem;
 }
 
 .namesite {
     font-family: 'Chilanka';
-    font-size: 3em;
+    font-size: 3rem;
     color: white;
 }
 
 .fa-paw.logo {
-    font-size: 5em;
+    font-size: 5rem;
     color: white;
-    margin-right: 0.1em;
+    margin-right: 0.2rem;
+}
+
+.form-inline a{
+    margin-right: 1rem;
+}
+
+.ui.animated.button i {
+    font-size: 1.5rem;
+}
+
+/** navbar verticak **/
+
+.ui.vertical.menu {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.ui.vertical.menu .item {
+    padding: 3rem;
+    
+}
+
+/** wrapper en row **/
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+
+/** form login register **/
+
+.form.login {
+    text-align: center;
+    padding: 5rem 5rem;
+    background-color: #E0E1E2;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    color: #343a40;
+    border: 1em solid #343a40;
+    position: absolute;
+    top: 6%;
+    left: 5%;
+    z-index: 1;
+}
+
+.form.login h1 {
+    font-size: 2em;
+}
+
+.form.login.register{
+    padding: 2.2rem 2rem;
+    width: 25rem;
+    height: 40rem;
+    border-radius: 0;
+}
+
+.form.login.register h1{
+    margin-bottom: 1rem;
+}
+
+.form.login input {
+    margin-top: 1rem;
+}
+
+.form.login.register input {
+    margin-top: 0;
+}
+
+.btn.btn-info.register {
+    margin-top: 1rem;
+    min-width: 55%;
+}
+
+.btn.btn-lg.btn-info {
+    margin-top: 1rem;
+}
+
+.doglogin {
+    max-width: 100%;
+}
+
+.main.form {
+    padding: 0;
+}
+
+
+/** main **/
+
+.main {
+    padding: 5rem 10rem 0 5rem;
+}
+
+/** main home **/
+
+.main h1 {
+    text-align: center;
+    font-family: 'Chilanka';
+    font-size: 2.5rem;
+}
+
+.list-unstyled {
+    font-size: 1.2rem;
+    margin-top: 4rem;
+    margin-left: 3rem;
+}
+
+.list-unstyled h5 {
+    font-size: 1.1rem;
+}
+
+.list-unstyled i {
+    font-size: 5rem;
+}
+
+.media img {
+    width: 8rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+/** compte user recap**/
+
+.card {
+    font-size: 1.2rem;
+    min-width: 20rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card li{
+    margin-bottom: 0.8rem;
+}
+
+.card-footer {
+    text-align: center;
+}
+
+/** footer **/
+
+.footer {
+    padding: 0.5%;
+    width: 100%;
+    background-color: #343a40;
+    color: #E0E1E2;
+    font-size: 2rem;
+    position: relative;
+}
+
+footer .fas.fa-paw.logo{
+    font-size: 2rem;
+    margin-right: -0.8rem;
+}
+
+.logo.footer a {
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+.footsteps {
+    position: absolute;
+    bottom: 4.1rem;
+    right: 10rem;
+    width: 20rem;
 }

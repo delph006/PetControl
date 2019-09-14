@@ -1,0 +1,10 @@
+<div class="logo footer">
+        <i class="fas fa-paw logo"></i><a class="namesite" href="{{ path('home') }}">PetControl</a>
+        <a href="">Nous contacter</a>
+        <a href="">Politique de confidentialité</a>
+
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<img class="footsteps" src="{{ asset('../images/footsteps.png') }}">
+{% endif %}
+</div>

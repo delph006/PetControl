@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -18,14 +19,36 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username')
-            ->add('lastname')
-            ->add('firstname')
+            ->add('username', TextType::class, [
+                'label' => 'Nom d\'utilisateur',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuiller indiquer un nom d\'utilisateur',
+                    ])
+            ]
+            ])
+            ->add('lastname', TextType::class, [
+                'label' => 'Nom',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuiller indiquer un nom',
+                    ])
+            ]
+            ])
+            ->add('firstname', TextType::class, [
+                'label' => 'Prénom',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuiller indiquer un prénom',
+                    ])
+            ]
+            ])
             ->add('email', EmailType::class)
             ->add('password', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
+                'label' => 'Mot de passe',
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',
@@ -38,8 +61,6 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            
-            
             //->add('role')
         ;
     }

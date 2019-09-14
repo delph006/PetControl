@@ -1,7 +1,39 @@
-{% include 'base.html.twig' %}
+{% extends "base.html.twig" %}
 
 {% block body %}
-<h1>Home du user</h1>
-User {{ user.username }}
+<div class="row">
+
+    <div class="card">
+        <div class="card-header">Mes animaux</div>
+        <div class="card-body">
+        <p>Nombre d'animal : {% if user.pets %}{{ user.pets|length }}
+    {% else %}
+    Aucun animal
+    {% endif %}
+        </div>
+        <div class="card-footer text-muted">
+         <a href="#">Voir</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">Mon compte</div>
+        <div class="card-body">
+        </div>
+        <div class="card-footer text-muted">
+         <a href="#">Voir</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">Suivi frais vétérinaire</div>
+        <div class="card-body">
+        </div>
+        <div class="card-footer text-muted">
+         <a href="#">Voir</a>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}

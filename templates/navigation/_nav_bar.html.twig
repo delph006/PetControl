@@ -7,12 +7,6 @@
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}{# est ce que mon utilisateur est authentifié ? #}
     
     <div class="form-inline">
-        <a href="">Mes animaux</a>
-        <a href="">Enregistrer un animal</a>
-        <a href="">Leur santé</a>
-    </div>
-
-    <div class="form-inline">
         <a class="btn btn-outline-primary my-2 my-sm-0"  href="{{ path('user_index', { id : app.user.id }) }}">Mon compte {{ app.user.username }}</a>
         <a class="btn btn-danger my-2 my-sm-0"  href="{{ path('app_logout')}} ">Déconnexion</a>
     </div>
