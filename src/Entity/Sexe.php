@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\TypeRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\SexeRepository")
  */
-class Type
+class Sexe
 {
     /**
      * @ORM\Id()
@@ -24,7 +24,7 @@ class Type
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Pet", mappedBy="type")
+     * @ORM\OneToMany(targetEntity="App\Entity\Pet", mappedBy="sexe")
      */
     private $pets;
 
@@ -67,7 +67,7 @@ class Type
     {
         if (!$this->pets->contains($pet)) {
             $this->pets[] = $pet;
-            $pet->setType($this);
+            $pet->setSexe($this);
         }
 
         return $this;
@@ -78,8 +78,8 @@ class Type
         if ($this->pets->contains($pet)) {
             $this->pets->removeElement($pet);
             // set the owning side to null (unless already changed)
-            if ($pet->getType() === $this) {
-                $pet->setType(null);
+            if ($pet->getSexe() === $this) {
+                $pet->setSexe(null);
             }
         }
 

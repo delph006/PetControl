@@ -6,13 +6,14 @@
     <div class="card">
         <div class="card-header">Mes animaux</div>
         <div class="card-body">
-        <p>Nombre d'animal : {% if user.pets %}{{ user.pets|length }}
-    {% else %}
-    Aucun animal
-    {% endif %}
+        <li>Nombre d'animal : {% if user.pets %}{{ user.pets|length }}
+            {% else %}
+            Aucun animal
+            {% endif %}
+        </li>
         </div>
         <div class="card-footer text-muted">
-         <a href="#">Voir</a>
+         <a href="{{ path('pet_list') }}">Voir</a>
         </div>
     </div>
 
@@ -28,6 +29,9 @@
     <div class="card">
         <div class="card-header">Suivi frais vétérinaire</div>
         <div class="card-body">
+            <li>Total frais engagés :</li>
+            <li>Total frais remboursés :</li>
+            <li>Reste à recevoir :</li>
         </div>
         <div class="card-footer text-muted">
          <a href="#">Voir</a>

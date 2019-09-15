@@ -51,10 +51,27 @@ class Pet
      */
     private $type;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Sexe", inversedBy="pets")
+     */
+    private $sexe;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $adopt_date;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $sterilisy;
+
+    
+
     public function __construct()
     {
-        $this->createdAt = new \DateTime;
-        $this->updatedAt = new \DateTime;
+        $this->created_at = new \DateTime;
+        $this->updated_at = new \DateTime;
     }
 
     public function getId(): ?int
@@ -142,6 +159,42 @@ class Pet
     public function setType(?Type $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getSexe(): ?Sexe
+    {
+        return $this->sexe;
+    }
+
+    public function setSexe(?Sexe $sexe): self
+    {
+        $this->sexe = $sexe;
+
+        return $this;
+    }
+
+    public function getAdoptDate(): ?\DateTimeInterface
+    {
+        return $this->adopt_date;
+    }
+
+    public function setAdoptDate(?\DateTimeInterface $adopt_date): self
+    {
+        $this->Adopt_date = $adopt_date;
+
+        return $this;
+    }
+
+    public function getSterilisy(): ?bool
+    {
+        return $this->sterilisy;
+    }
+
+    public function setSterilisy(bool $sterilisy): self
+    {
+        $this->sterilisy = $sterilisy;
 
         return $this;
     }
