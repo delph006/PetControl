@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -66,12 +68,21 @@ class Pet
      */
     private $sterilisy;
 
-    
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Weight", inversedBy="pets")
+     */
+    private $weight;
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 
     public function __construct()
     {
         $this->created_at = new \DateTime;
         $this->updated_at = new \DateTime;
+        $this->weight = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -195,6 +206,32 @@ class Pet
     public function setSterilisy(bool $sterilisy): self
     {
         $this->sterilisy = $sterilisy;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Weight[]
+     */
+    public function getWeight(): Collection
+    {
+        return $this->weight;
+    }
+
+    public function addWeight(Weight $weight): self
+    {
+        if (!$this->weight->contains($weight)) {
+            $this->weight[] = $weight;
+        }
+
+        return $this;
+    }
+
+    public function removeWeight(Weight $weight): self
+    {
+        if ($this->weight->contains($weight)) {
+            $this->weight->removeElement($weight);
+        }
 
         return $this;
     }

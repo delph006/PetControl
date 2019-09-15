@@ -1,43 +1,48 @@
-{% extends "base.html.twig" %}
 
-{% block body %}
+<h1>Mes informations</h1>
+<br>
 <div class="row">
-
     <div class="card">
         <div class="card-header">Mes animaux</div>
-        <div class="card-body">
-        <li>Nombre d'animal : {% if user.pets %}{{ user.pets|length }}
-            {% else %}
-            Aucun animal
-            {% endif %}
-        </li>
-        </div>
-        <div class="card-footer text-muted">
-         <a href="{{ path('pet_list') }}">Voir</a>
-        </div>
+            <div class="card-body">
+                <ul>
+                    <li>Nombre d'animal : {% if app.user.pets %}{{ app.user.pets|length }}
+                        {% else %}
+                        Aucun animal
+                        {% endif %}
+                    </li>
+                    <li><a href="{{ path('pet_new')}}">Enregistrer un animal</a></li>
+                    <li><a href="{{ path('weight_new')}}">Saisir un poids</a></li>
+                </ul>
+            </div>
+            <div class="card-footer text-muted">
+                <a href="{{ path('pet_list') }}">Voir</a>
+            </div>
     </div>
 
     <div class="card">
         <div class="card-header">Mon compte</div>
-        <div class="card-body">
-        </div>
+            <div class="card-body">
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
         <div class="card-footer text-muted">
-         <a href="#">Voir</a>
+            <a href="#">Voir</a>
         </div>
     </div>
 
     <div class="card">
         <div class="card-header">Suivi frais vétérinaire</div>
         <div class="card-body">
-            <li>Total frais engagés :</li>
-            <li>Total frais remboursés :</li>
-            <li>Reste à recevoir :</li>
+            <ul>
+                <li>Total frais engagés :</li>
+                <li>Total frais remboursés :</li>
+                <li>Reste à recevoir :</li>
+            </ul>
         </div>
         <div class="card-footer text-muted">
          <a href="#">Voir</a>
         </div>
     </div>
 </div>
-
-
-{% endblock %}

@@ -12,7 +12,6 @@
         <i class="fas fa-cat"></i>
         {% endif %}
          {{ pet.name }} 
-       
         </div>
         <div class="card-body">
         <ul>
@@ -31,7 +30,7 @@
         </ul>
         </div>
         <div class="card-footer text-muted">
-         <a href="{{ path('pet_show', { id : pet.id }) }}">Modifier</a><a href="">Supprimer</a>
+            <a href="{{ path('pet_show', { id : pet.id }) }}">Voir</a><a href="">Modifier</a><a href="">Supprimer</a>
         </div>
 </div>
 {% else %}

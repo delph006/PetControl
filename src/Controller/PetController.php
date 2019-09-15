@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Pet;
 use App\Form\PetType;
+use App\Entity\Weight;
 use App\Repository\PetRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;

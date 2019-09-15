@@ -4,6 +4,11 @@
 
 {% block body %}
 
+ {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+  {% include "user/index.html.twig" %}
+  
+ {% else %}
 <h1>PetControl vous facilite la vie !!!</h1>
 
 <ul class="list-unstyled">
@@ -31,6 +36,8 @@
     </div>
   </li>
 </ul>
+
+{% endif %}
 
 
 {% endblock %}

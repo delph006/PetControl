@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau poids{% endblock %}
+
+    {% block body %}
+        <div class="newPet">
+            <h1>Nouveau poids</h1>
+
+            {{ form_start(form)}}
+                {{ form_widget(form) }}
+                <button class="btn btn-info register">{{ button_label|default('Valider') }}</button>
+            {{ form_end(form) }}
+        </div>
+      {% endblock %}
+  
+

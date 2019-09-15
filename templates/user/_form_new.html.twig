@@ -13,7 +13,10 @@
             {{ form_widget(form) }}
             <button class="btn btn-info register">{{ button_label|default('Valider') }}</button>
         {{ form_end(form) }}
+         <a href="{{ path('app_login') }}">Me connecter !!</a>
     </div>
+
+   
 
     {% endblock %}
 
